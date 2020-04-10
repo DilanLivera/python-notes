@@ -1,6 +1,6 @@
 # Python Notes
 
-[Python 3.8.2 documentation](https://docs.python.org/3/)
+[Python documentation](https://docs.python.org/3/)
 
 ### Dictionary
 Dictionaries are key value pairs and list are ordered list of elements.
@@ -44,7 +44,7 @@ Dictionaries are key value pairs and list are ordered list of elements.
   "blue" in cat.values() # True
   ```
 
-- Dictionary Comprehension `{ __:__ for __ in __ }`
+- Dictionary Comprehension **`{ __:__ for __ in __ }`**
   ```
   numbers = dict( first = 1, second = 2, third = 3)
 
@@ -56,7 +56,7 @@ Dictionaries are key value pairs and list are ordered list of elements.
   { (even_odd_nums.get("even" if num % 2 == 0 else "odd").append(num)) for num in range(1,10) } #  even_odd_nums -> {'even': [2, 4, 6, 8], 'odd': [1, 3, 5, 7, 9]}
   ```
 
-- Helpful methods - `clear()` `copy()` `fromkeys()` `get()` `pop()` `update()`
+- Helpful methods - **`clear()` `copy()` `fromkeys()` `get()` `pop()` `update()`**
   ```
   artist = { first: "Neil", last: "Young" }
 
