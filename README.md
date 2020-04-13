@@ -74,6 +74,72 @@ Dictionaries are key value pairs and list are ordered list of elements.
   artist.update(new_items) # { email: "name@server.com", first: "Neil", last: "Young" } if the value exists then it overrides it
   ```
 
+### Tuples
+An ordered collection or grouping of items. Tuples are immutable. Data in Tuples doesnt have to be unique. We can have nested Tuples.
+
+  ```
+  alphabet = ( "a", "b", "c" )
+  numbers = tuple(1, 2, 3)
+  ```
+
+- To get the number of times a value appears in a tuple
+  ```
+  (1,2,3,3,3).count(3) # 3
+  ```
+
+- To get the index at which a value is found in a tuple. If its not found, then it returns a **`ValueError`**
+  ```
+  (1,2,3,3,3).index(3) # 2 - only the first matching index is returned
+  ```
+
+### Sets
+Sets do not have duplicate values. Elements in sets aren't ordered. You cannot access items in a set by index.
+  ```
+  s = set({1, 4, 5})
+  s = { 1, 4, 5 }
+  ```
+
+- To check if a value exists in a Set
+  ```
+  4 in { 1, 4, 5 } # True
+  ```
+
+- To convert a List to a Set
+  ```
+  set([1, 2, 3, 4, 4, 5, 5]) # {1, 2, 3, 4, 5} Removes all the duplicates
+  ```
+
+- To add a element to a Set. If the element is already in the set, the set doesn't change.
+  ```
+  s = set([1, 2, 3])
+  s.add(4) # {1, 2, 3, 4}
+  ```
+
+- To removes a value from the set. Returns a **`KeyError`** if the value is not found. Need to use **`discard()`** to avoid **`KeyError`** s.
+  ```
+  s = {1,2,3,4,5,6}
+  s.remove(3)
+  ```
+
+- Sets have quite a few other mathematical methods such as intersection, symmetric_difference, union, etc...
+  ```
+  math_students = { "Matt", "Helen", "Prashant", "James", "Aparna" }
+  bio_students = { "Jane", "Matt", "Charlotte", "Mesut", "Oliver", "James" }
+  
+  # to generate a set with all unique students
+  print(math_students | bio_students) # {'Oliver', 'Charlotte', 'James', 'Mesut', 'Helen', 'Matt', 'Jane', 'Prashant', 'Aparna'}
+
+  # to generate a set with students who are in both courses
+  print(math_students & bio_students) # {'James', 'Matt'}
+  ```
+
+- Helpful methods - **`clear()` `copy()`**
+  ```
+  some_set = {1, 2, 3}.copy() # looks the same, not the same thing in memory
+
+  some_set.clear();
+  ```
+
 ### Other
 - To check equality of values
   ```
