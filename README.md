@@ -149,6 +149,117 @@ Sets do not have duplicate values. Elements in sets aren't ordered. You cannot a
   some_set.clear();
   ```
 
+### Functions and Parameters
+- Pass a function as a parameter
+  ```
+  def addition(a,b):
+    return a + b
+
+  def calculate(a,b, fn = addition):
+    return fn(a,b)
+
+  print(calculate(1,2)) # 3
+  ```
+
+- Keyword Arguments
+  ```
+  def full_name(first, last):
+    return f"Your full name is {first} {last}."
+
+  print(full_name(first = 'Dilan', last = 'Livera')) # Your full name is Dilan Livera.
+  ```
+
+- **`global`** keyword
+This is use to manipulate a variable defined in the **`global`** scope. 
+  ```
+  total = 0
+
+  def add_to_total(num):
+    global total
+    total += num
+    print(f"Total = {total}")
+
+  add_to_total(1) # Total = 1
+  add_to_total(1) # Total = 2
+  ```
+
+- **`nonlocal`** Keyword
+Lets us modify a parent's variable in a child function
+  ```
+  def outer():
+    count = 0
+
+    def inner():
+      nonlocal count
+      count += 1
+
+      return count
+    
+    return inner() 
+
+  print(outer()) # 1
+  ```
+
+- Docstrings **`""" """`**
+  ```
+  def exponent(num, power = 2):
+    """exponent(num, power) raises num to specified power. Power defaults to 2."""
+    return num ** power
+
+  print(exponent(2)) # 4
+
+  print(exponent.__doc__)
+  ```
+
+- **`*args`**
+A sepcial operator we can pass to a function to gather remaining ***arguments*** as a ***tuple***. **`args`** is just a parameter, we can call it whatever we want.
+  ```
+  def what_is_in_args(*args):
+    print(args)
+
+  what_is_in_args(1,2,3,4,5) # (1, 2, 3, 4, 5)
+  ```
+
+- **`**kwargs`**
+A special operator we can pass to a function to gather remaining ***keyword arguments*** as a ***dictionary***. **`kwargs`** is just a parameter, we can call it whatever we want.
+  ```
+  def what_is_in_kwargs(job, **kwargs):
+    print(kwargs)
+
+  what_is_in_kwargs(job = "Software Developer", first_name="Dilan", last_name="Livera") # {'first_name': 'Dilan', 'last_name': 'Livera'}
+  ```
+
+- Order of Parameters
+  1. parameters
+  2. **`*args`**
+  3. default parameters
+  4. **`**kwargs`**
+
+- ***Tuple*** unpacking
+  ```
+  def sum_of_values(*args):
+    total = 0
+
+    for num in args:
+      total += num
+    
+    print(total)
+
+  nums = [1,2,3,4,5]
+
+  sum_of_values(*nums) # 15. nums list is unpacked here.
+  ```
+
+- ***Dictionary*** unpacking
+  ```
+  def dictionary_unpacking(first, last):
+    print(f"My name is {first} {last}")
+
+  names = dict(first = "Dilan", last = "Livera")
+
+  dictionary_unpacking(**names) # My name is Dilan Livera. names dictionary is unpacked here.
+  ```
+
 ### Other
 - To check equality of values
   ```
