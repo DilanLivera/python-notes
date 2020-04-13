@@ -77,7 +77,7 @@ Dictionaries are key value pairs and list are ordered list of elements.
 ### Tuples
 An ordered collection or grouping of items. Tuples are immutable. Data in Tuples doesnt have to be unique. We can have nested Tuples.
 
-- To create a dictionary
+- To create a tuple
   ```
   alphabet = ( "a", "b", "c" )
   ```
@@ -99,7 +99,7 @@ An ordered collection or grouping of items. Tuples are immutable. Data in Tuples
 ### Sets
 Sets do not have duplicate values. Elements in sets aren't ordered. You cannot access items in a set by index.
   
-- To create a dictionary
+- To create a set
   ```
   numbers = { 1, 4, 5 }
   ```
