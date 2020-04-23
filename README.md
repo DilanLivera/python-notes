@@ -6,21 +6,21 @@
 Dictionaries are key value pairs and list are ordered list of elements.
 
 - To create a dictionary
-  ```
+  ```Python
   cat = { "name": "blue", "age": 3.5 }
   ```
   or
-  ```
+  ```Python
   cat = dict( name = "blue", age = 3.5 )
   ```
 
 - To Access data from a dictionary
-  ```
+  ```Python
   cat["name"] # 'blue'
   ```
 
 - To iterate
-  ```
+  ```Python
   # iterate through keys
   for key in cat.keys()
     print(key)
@@ -35,17 +35,17 @@ Dictionaries are key value pairs and list are ordered list of elements.
   ```
 
 - To check does a dictionary have a key
-  ```
+  ```Python
   "name" in cat # True
   ```
 
 - To check if value exist in the dictionary
-  ```
+  ```Python
   "blue" in cat.values() # True
   ```
 
 - Dictionary Comprehension **`{ __:__ for __ in __ }`**
-  ```
+  ```Python
   numbers = dict( first = 1, second = 2, third = 3)
 
   { key: value ** 2 for key,value in numbers.items() } # { 'first': 1, 'second': 4, 'third': 9 }
@@ -57,7 +57,7 @@ Dictionaries are key value pairs and list are ordered list of elements.
   ```
 
 - Helpful methods - **`clear()` `copy()` `fromkeys()` `get()` `pop()` `update()`**
-  ```
+  ```Python
   artist = { first: "Neil", last: "Young" }
 
   artist.clear() # {}
@@ -78,21 +78,21 @@ Dictionaries are key value pairs and list are ordered list of elements.
 An ordered collection or grouping of items. Tuples are immutable. Data in Tuples doesnt have to be unique. We can have nested Tuples.
 
 - To create a tuple
-  ```
+  ```Python
   alphabet = ( "a", "b", "c" )
   ```
   or
-  ```
+  ```Python
   numbers = tuple(1, 2, 3)
   ```
 
 - To get the number of times a value appears in a tuple
-  ```
+  ```Python
   (1,2,3,3,3).count(3) # 3
   ```
 
 - To get the index at which a value is found in a tuple. If its not found, then it returns a **`ValueError`**
-  ```
+  ```Python
   (1,2,3,3,3).index(3) # 2 - only the first matching index is returned
   ```
 
@@ -100,38 +100,38 @@ An ordered collection or grouping of items. Tuples are immutable. Data in Tuples
 Sets do not have duplicate values. Elements in sets aren't ordered. You cannot access items in a set by index.
   
 - To create a set
-  ```
+  ```Python
   numbers = { 1, 4, 5 }
   ```
   or
-  ```
+  ```Python
   numbers = set({1, 4, 5})
   ```
 
 - To check if a value exists in a Set
-  ```
+  ```Python
   4 in { 1, 4, 5 } # True
   ```
 
 - To convert a List to a Set
-  ```
+  ```Python
   set([1, 2, 3, 4, 4, 5, 5]) # {1, 2, 3, 4, 5} Removes all the duplicates
   ```
 
 - To add a element to a Set. If the element is already in the set, the set doesn't change.
-  ```
+  ```Python
   s = set([1, 2, 3])
   s.add(4) # {1, 2, 3, 4}
   ```
 
 - To removes a value from the set. Returns a **`KeyError`** if the value is not found. Need to use **`discard()`** to avoid **`KeyError`** s.
-  ```
+  ```Python
   s = {1,2,3,4,5,6}
   s.remove(3)
   ```
 
 - Sets have quite a few other mathematical methods such as intersection, symmetric_difference, union, etc...
-  ```
+  ```Python
   math_students = { "Matt", "Helen", "Prashant", "James", "Aparna" }
   bio_students = { "Jane", "Matt", "Charlotte", "Mesut", "Oliver", "James" }
   
@@ -143,7 +143,7 @@ Sets do not have duplicate values. Elements in sets aren't ordered. You cannot a
   ```
 
 - Helpful methods - **`clear()` `copy()`**
-  ```
+  ```Python
   some_set = {1, 2, 3}.copy() # looks the same, not the same thing in memory
 
   some_set.clear();
@@ -151,7 +151,7 @@ Sets do not have duplicate values. Elements in sets aren't ordered. You cannot a
 
 ### Functions and Parameters
 - Pass a function as a parameter
-  ```
+  ```Python
   def addition(a,b):
     return a + b
 
@@ -162,7 +162,7 @@ Sets do not have duplicate values. Elements in sets aren't ordered. You cannot a
   ```
 
 - Keyword Arguments
-  ```
+  ```Python
   def full_name(first, last):
     return f"Your full name is {first} {last}."
 
@@ -171,7 +171,7 @@ Sets do not have duplicate values. Elements in sets aren't ordered. You cannot a
 
 - **`global`** keyword
 This is use to manipulate a variable defined in the **`global`** scope. 
-  ```
+  ```Python
   total = 0
 
   def add_to_total(num):
@@ -185,7 +185,7 @@ This is use to manipulate a variable defined in the **`global`** scope.
 
 - **`nonlocal`** Keyword
 Lets us modify a parent's variable in a child function
-  ```
+  ```Python
   def outer():
     count = 0
 
@@ -201,7 +201,7 @@ Lets us modify a parent's variable in a child function
   ```
 
 - Docstrings **`""" """`**
-  ```
+  ```Python
   def exponent(num, power = 2):
     """exponent(num, power) raises num to specified power. Power defaults to 2."""
     return num ** power
@@ -213,7 +213,7 @@ Lets us modify a parent's variable in a child function
 
 - **`*args`**
 A sepcial operator we can pass to a function to gather remaining ***arguments*** as a ***tuple***. **`args`** is just a parameter, we can call it whatever we want.
-  ```
+  ```Python
   def what_is_in_args(*args):
     print(args)
 
@@ -222,7 +222,7 @@ A sepcial operator we can pass to a function to gather remaining ***arguments***
 
 - **`**kwargs`**
 A special operator we can pass to a function to gather remaining ***keyword arguments*** as a ***dictionary***. **`kwargs`** is just a parameter, we can call it whatever we want.
-  ```
+  ```Python
   def what_is_in_kwargs(job, **kwargs):
     print(kwargs)
 
@@ -236,7 +236,7 @@ A special operator we can pass to a function to gather remaining ***keyword argu
   4. **`**kwargs`**
 
 - ***Tuple*** unpacking
-  ```
+  ```Python
   def sum_of_values(*args):
     total = 0
 
@@ -251,7 +251,7 @@ A special operator we can pass to a function to gather remaining ***keyword argu
   ```
 
 - ***Dictionary*** unpacking
-  ```
+  ```Python
   def dictionary_unpacking(first, last):
     print(f"My name is {first} {last}")
 
@@ -260,13 +260,30 @@ A special operator we can pass to a function to gather remaining ***keyword argu
   dictionary_unpacking(**names) # My name is Dilan Livera. names dictionary is unpacked here.
   ```
 
+### Lambdas and Build in Functions
+- **`lambda`** s  
+lambdas are anonymous functions.
+  ```Python
+  def calculate(a,b, fn):
+    return fn(a, b)
+
+  print(calculate(1,2,lambda x, y: x + y))
+  ```
+
+- **`map`**
+  ```Python
+  nums = [1,2,3,4,5]
+
+  doubles = list(map(lambda x: x * 2, nums)) # doubles = [2, 4, 6, 8, 10]
+  ```
+
 ### Other
 - To check equality of values
-  ```
+  ```Python
   "A" == "B"
   ```
 
 - To check the equality of place in the memory
-  ```
+  ```Python
   clone is d
   ```
